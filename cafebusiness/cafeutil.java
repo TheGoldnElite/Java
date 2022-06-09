@@ -23,7 +23,10 @@ public class CafeUtil {
         public void displayMenu(ArrayList<String> menuItems){
 
             String[] myArray = new String[5];
-            String name = myArray.get(0);
+            myArray.add("drip coffee");
+            myArray.add("cappuccino");
+            myArray.add("latte");
+            myArray.add("mocha");
 
             for(int i = 0; i < myArray.length;i++){
                 System.out.println(myArray[i])
