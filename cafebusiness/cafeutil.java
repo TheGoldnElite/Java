@@ -22,14 +22,14 @@ public class CafeUtil {
 
         public void displayMenu(ArrayList<String> menuItems){
 
-            String[] myArray = new String[5];
-            myArray.add("drip coffee");
-            myArray.add("cappuccino");
-            myArray.add("latte");
-            myArray.add("mocha");
+            ArrayList<String> menutItems=new ArrayList<>();
+            menuItems.add("drip coffee");
+            menutItems.add("cappuccino");
+            menuItems.add("latte");
+            menuItems.add("mocha");
 
-            for(int i = 0; i < myArray.length;i++){
-                System.out.println(myArray[i])
+            for(int i = 0; i < menuItems.length;i++){
+                System.out.println(menuItems[i]);
             }
 
         }
