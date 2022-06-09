@@ -11,7 +11,7 @@ public class TestCafe {
     of the CafeUtil class. 
     Hint: it will need to correspond with the variable name used below..
     */
-        TestCafe = 
+        TestCafe appTest= new  TestCafe();
     /* ============ App Test Cases ============= */
     
         System.out.println("\n----- Streak Goal Test -----");
