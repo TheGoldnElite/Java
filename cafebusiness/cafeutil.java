@@ -22,7 +22,7 @@ public class CafeUtil {
 
         public void displayMenu(ArrayList<String> menuItems){
 
-            ArrayList<String> menutItems=new ArrayList<>();
+            ArrayList<String> menutItems=new ArrayList<String>();
             menuItems.add("drip coffee");
             menutItems.add("cappuccino");
             menuItems.add("latte");
