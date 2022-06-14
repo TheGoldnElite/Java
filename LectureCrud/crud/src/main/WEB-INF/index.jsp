@@ -3,8 +3,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page isErrorPage="true" %>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,14 +13,6 @@
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-	<h1>You have created ${madlibs.size()} madlibs so far</h1>
-	
-	<a href="/">take me home</a>
-
-	<c:forEach var ="story" items="${madlibs}">
-		<p>The ${madlib.getAdjective()} ${madlib.getNoun()} is ${madlib.getVerb()}</p>
-	
-	</c:forEach>
-
+	<h1>I'm a Template</h1>
 </body>
 </html>

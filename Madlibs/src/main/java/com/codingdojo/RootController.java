@@ -8,10 +8,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class RootController
 {
-	@GetMapping("/home")
-	public String home()
-	{
+	@GetMapping("/")
+	public String home(HttpSession session){
+		if(session.getAttribute("madlibs")==null) {
+			session.setAttributes("madlibs",new ArrayList<Madlib>());
+		}
 		return "index";
+	}
+	
+	@GetMapping("/show")
+	public String show(Model model,HttpSession session) {
+		return "show";
 	}
 	
 	@PostMapping("/submit")
@@ -19,7 +26,8 @@ public class RootController
 	(
 		@RequestParam("noun") String noun,
 		@RequestParam("adjective") String adjective,
-		@RequestParam("verb") String verb
+		@RequestParam("verb") String verb,
+		HttpSession session
 	)
 	{
 		System.out.println("Noun:"+noun);

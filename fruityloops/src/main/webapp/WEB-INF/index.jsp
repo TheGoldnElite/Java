@@ -17,9 +17,10 @@
 	
 	<c:forEach var="grocery" items="${cart}">
 		<div>
-			<p>Name:${grocery.name}</p>
-			<p>Price:${grocery.price}</p>
+			<p>Name:<c:out value="${grocery.name}"</p>
+			<p>Price:<c:out value="${grocery.price}"</p>
 			<p></p>
 		</div>
+	</c:forEach>
 </body>
 </html>
