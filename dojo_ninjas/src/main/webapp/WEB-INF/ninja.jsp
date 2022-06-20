@@ -13,11 +13,6 @@
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-	<h1>Title: ${movie.title}</h1>
-	<p>Genre: ${movie.genre }</p>
-	<p>Release Date: ${movie.release_date }</p>
-	<p>Rating: ${movie.rating }</p>
-	
-	<a href="/movie">All Movies</a>
+	<h1>I'm a Template</h1>
 </body>
 </html>

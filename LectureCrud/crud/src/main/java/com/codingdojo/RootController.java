@@ -20,7 +20,9 @@ public class RootController {
 	@GetMapping("")
 		public String index(Model model) {
 			
+			System.out.println("Create")
 			model.addAttribute("movie", new Movie());
+			model.addAttribute("movies", movieService.findAll());
 			return "index";
 		}
 	
@@ -36,14 +38,31 @@ public class RootController {
 	
 		
 	@GetMapping("/show/{id}")
-		public String show() {
+		public String show( @PathVariable("id") LongId) {
 			return "show";
 	}
 	
-	@GetMapping("/edot/{id}")
-		public String edit() {
+	@GetMapping("/edit/{id}")
+		public String edit(@PathVariable("id") Long movieId, Model model) {
+			
+			model.addAttribute("movie",movieService.findOne(movieId));
 			return "edit";
 	}
 	
+	@PostMapping("/delete/{id}")
+	public String deleteMovie ( @PathVariable("id") Long movieId) {
+		movieService.deleteOne(movieId);
+		return "redirect:/movie";
+	}
 	
-}
+	@PostMapping("/edit/{id}")
+		public String update (@Valid @ModelAttribute("movie") Movie movie,BindingResult res) {
+			if(res.hasErrors()) {
+				return "edit";
+			}
+			movieService.update(movie);
+			return "redirect:/movie";
+	}
+	
+	
+};

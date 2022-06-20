@@ -15,6 +15,35 @@
 <body>
 	<h1>I'm a Template</h1>
 	
+	<table>
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Genre</th>
+				<th>Release Date</th>
+				<th>Ratings</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="movie" items="${movies}">
+				<tr>
+					<td>${movie.title}</td>
+					<td>${movie.genre}</td>
+					<td>${movie.release_date}</td>
+					<td>${movie.rating}</td>
+					<td>
+						<a href="/movie/${ movie.id }">Edit</a>
+						<form action="/movies/delete/${movie.id}" method="POST">
+						
+							<input type="submit" value="Delete">
+					</td>
+					
+				</tr>
+			</c:forEach>
+		</tbody>
+	
+	</table>
+	
 	<form:form action="/movie" method="POST" modelAttribute="movie">
 		<form:error path="title"></form:errors>
 		<input placeholder="Title" path="title"><form:input>

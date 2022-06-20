@@ -13,11 +13,14 @@
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-	<h1>Title: ${movie.title}</h1>
-	<p>Genre: ${movie.genre }</p>
-	<p>Release Date: ${movie.release_date }</p>
-	<p>Rating: ${movie.rating }</p>
+	<h1>Expense Details</h1>
+	<a href="/expense">Go Back</a>
 	
-	<a href="/movie">All Movies</a>
+	<p>Expense Name: ${safetravel.expense }</p>
+	<p>Vendor: ${safetravel.vendor }</p>
+	<p>Amount Spent: $ ${safetravel.amount }</p>
+	<p>Expense Description: ${safetravel.description }</p>
+	
+	
 </body>
 </html>
