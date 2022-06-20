@@ -1,4 +1,4 @@
-package com.coding.repositories;
+package com.codingdojo.repositories;
 
 import java.util.ArrayList;
 
@@ -8,14 +8,11 @@ import org.springframework.stereotype.Repository;
 import com.codingdojo.models.User;
 
 @Repository
-public interface UserRepository extends CrudRepository<User,Long>{
-
+public interface UserRepository extends CrudRepository<User,Long>
+{
 	public ArrayList<User> findAll();
-	
-	//select * from user where user.name=?
+//	select * from user where user.name=?
 	public User findByName(String username);
-	
-	
-	//select * from user where user.email=?
+//	select * form user where user.email=?
 	public User findByEmail(String email);
 };
