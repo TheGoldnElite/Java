@@ -13,6 +13,24 @@
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-	<h1>I'm a Template</h1>
+	<h1>${ dojo.name} Location Ninjas </h1>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>First Name:</th>
+				<th>Last Name:</th>
+				<th>Age:</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>${ninja.first}</td>
+				<td>${ninja.last}</td>
+				<td>${ninja.age}</td>
+			</tr>
+		</tbody>
+	
+	</table>
 </body>
 </html>

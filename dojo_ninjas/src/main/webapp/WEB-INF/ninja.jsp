@@ -13,6 +13,29 @@
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-	<h1>I'm a Template</h1>
+	<h1>New Ninja</h1>
+	
+	<form:form action="ninjas/new" method="POST" modelAttribute="ninja">
+	
+		<form:select path="dojo">
+			<c:forEach var="dojo" items="${dojo}">
+				Dojo:
+				<form:option value="${dojo.id}">${dojo.name}</form:option>
+			</c:forEach>
+		</form:select>
+		
+		<form:errors path="first"></form:errors>
+		<form:input path="first"></form:input>
+		
+		<form:errors path="last"></form:errors>
+		<form:input path="last"></form:input>
+		
+		<form:errors path="age"></form:errors>
+		<form:input path="age"></form:input>
+		
+		
+		
+		<input value="Create" type="submit">
+	</form:form>
 </body>
 </html>

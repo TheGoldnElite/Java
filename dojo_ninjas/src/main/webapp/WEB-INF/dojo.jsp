@@ -13,6 +13,13 @@
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-	<h1>I'm a Template</h1>
+	<h1>New Dojo</h1>
+	
+	<form:form action="/dojos/new" method="POST" modelAttribute="dojo">
+		<form:errors path="name"></form:errors>
+		<form:input path="name"></form:input>
+		
+		<input type="submit" value="Create">	
+	</form:form>
 </body>
 </html>
