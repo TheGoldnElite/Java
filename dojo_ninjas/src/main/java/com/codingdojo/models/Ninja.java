@@ -5,6 +5,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -29,9 +30,17 @@ public class Ninja {
 	
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name=dojo_id)
+	@JoinColumn(name="dojo_id") //foreign key
 	private Dojo dojo;
 	
+	public Dojo getDojo() {
+		return dojo;
+	}
+
+	public void setDojo(Dojo dojo) {
+		this.dojo = dojo;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -67,4 +76,4 @@ public class Ninja {
 	public Ninja() {
 		
 	}
-}
+};
