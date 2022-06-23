@@ -2,7 +2,6 @@ package com.codingdojo.services;
 
 import javax.servlet.http.HttpSession;
 
-
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +16,6 @@ public class UserService
 {
 	@Autowired
 	private UserRepository userRepository;
-	
 	
 	public User login(TempUser tempUser,BindingResult res)
 	{
@@ -64,6 +62,4 @@ public class UserService
 		}
 	}
 	
-	
-
 };

@@ -1,6 +1,6 @@
 package com.codingdojo.controllers;
-
 import javax.servlet.http.HttpSession;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +16,8 @@ import com.codingdojo.models.User;
 import com.codingdojo.services.UserService;
 
 @Controller
-public class RootController {
-
+public class RootController
+{
 	@Autowired
 	private UserService userService;
 	
@@ -29,31 +29,34 @@ public class RootController {
 		return "login_register";
 	}
 	
-
-	
 	@PostMapping("/register")
 	public String register
 	(
-		@Valid @ModelAttribute("userRegister") User user,
+		@Valid @ModelAttribute("userRegister") User form_user,
 		BindingResult res,
 		Model model
-		
 	)
 	{
 		if(res.hasErrors())
 		{
 			model.addAttribute("userLogin",new TempUser());
-			model.addAttribute("userRegister",new User());
 			return "login_register";
 		}
-		User db_user=userService.register(user,res);
+		User db_user=userService.register(form_user,res);
 		if(db_user==null)
 		{
 			model.addAttribute("userLogin",new TempUser());	
-			model.addAttribute("userRegister",new User());
 			return "login_register";
 		}
 		return "redirect:/";
+	}
+	
+	
+	@GetMapping("/dashboard")
+	public String dashboard(HttpSession session)
+	{
+		if(session.getAttribute("user")==null) return "redirect:/";
+		return "dashboard";
 	}
 	
 	@PostMapping("/login")
@@ -80,29 +83,10 @@ public class RootController {
 		return "redirect:/dashboard";
 	}
 	
-	
-	@GetMapping("/dashboard")
-	public String dashboard(HttpSession session)
-	{
-		if(session.getAttribute("user")==null) return "redirect:/";
-		return "dashboard";
-	}
-	
 	@GetMapping("/logout")
 	public String logout(HttpSession session)
 	{
 		userService.logout(session);
 		return "redirect:/";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 };
